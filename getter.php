@@ -13,17 +13,24 @@ class WufooGetter {
 	}
 	
 	public function makeCall() {
-		//Before we get this party started, check to see if the request made was for one of the hash values specified in config.php
 		$hashArr = $this->config->hash;
 		$requestURL = $this->url;
-		$containsValidHash = false;
-		foreach($hashArr as $value){
-			if($containsValidHash === false){
-				$containsValidHash = strpos($requestURL, $value);
+		$noInvalidHash = false;
+		//Does this call include a hash value? If not, skip the check.
+		if(strpos($requestURL, 'api/v3/forms/') === false && strpos($requestURL, 'api/v3/reports/') === false){
+			$noInvalidHash = true;
+		}
+		//If so, make sure it is specified in config.php.
+		else{
+			//Before we get this party started, check to see if the request made was for one of the hash values specified in config.php
+			foreach($hashArr as $value){
+				if($noInvalidHash === false){
+					$noInvalidHash = strpos($requestURL, $value);
+				}
 			}
 		}
 		//Initiate cURL authentication, but only if the above check passed, or if the array of hashes was left blank.
-		if($containsValidHash !== false || empty($hashArr)){
+		if($noInvalidHash !== false || empty($hashArr)){
 			$curl = curl_init('https://'.$this->config->subdomain.'.wufoo.com/'.$this->url);       
 			curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);                     
 			curl_setopt($curl, CURLOPT_USERPWD, $this->config->apiKey.':footastic');  
