@@ -36,7 +36,7 @@ Some APIs need more information to be able to return the information they are su
     
 ### Full API Documentation
 
-Available here: http://wufoo.com/docs/api/v3/users/
+Available here: http://www.wufoo.com/docs/api/v3/users/
 
 Each API returns it's own set of specific information which is all documented on Wufoo.com for reference.
     
@@ -49,7 +49,7 @@ Information about all users:
       "getterPath" : "../"              // Path to getter.php
     });
     
-Full documentation: http://wufoo.com/docs/api/v3/users/
+Full documentation: http://www.wufoo.com/docs/api/v3/users/
 
 ### Forms
 
@@ -68,7 +68,7 @@ Information about a specific form:
       "formHash"   : "x7x7x7"            // Hash of specific form
     });
 
-Full documentation: http://wufoo.com/docs/api/v3/forms/
+Full documentation: http://www.wufoo.com/docs/api/v3/forms/
 
 ### Entries
 
@@ -90,7 +90,7 @@ Entries from a report:
       "system"       : false              // Return system fields or not
     });
 
-Full documentation: http://wufoo.com/docs/api/v3/entries/
+Full documentation: http://www.wufoo.com/docs/api/v3/entries/
 
 ### Fields
 
@@ -114,7 +114,7 @@ Fields of a report:
 
 Bear in mind that fields may have `SubFields`, as is the case when using Wufoo-provided fields like Name, which has First and Last as subfields. Testing for SubFields and looping through those within the main loop while processing the data is a good idea.
 
-Full documentation: http://wufoo.com/docs/api/v3/fields/
+Full documentation: http://www.wufoo.com/docs/api/v3/fields/
 
 ### Comments
 
@@ -139,7 +139,7 @@ Get comments from a form:
       "entryID"    : 143                  // ID of specific comment to return
     });
     
-Full documentation: http://wufoo.com/docs/api/v3/comments/
+Full documentation: http://www.wufoo.com/docs/api/v3/comments/
     
 ### Reports
 
@@ -158,7 +158,7 @@ Information about single form:
       "reportHash"  : "m5p7k0"            // Hash of a specific report
     });
     
-Full documentation: http://wufoo.com/docs/api/v3/reports/
+Full documentation: http://www.wufoo.com/docs/api/v3/reports/
     
 ### To Do
 
